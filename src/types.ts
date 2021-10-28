@@ -8,3 +8,9 @@ export enum CellType {
   cross,
   unchecked,
 }
+
+export interface CellInfo {
+  filledWith: CellType;
+  row: number;
+  column: number;
+}

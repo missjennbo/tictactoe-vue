@@ -2,10 +2,12 @@
   <v-container>
     <v-row
       justify="center"
-      v-for="row in boardData"
+      v-for="row in this.$props.boardData"
       :key="boardData.indexOf(row)"
     >
-      <Cell /><Cell /><Cell />
+      <Cell v-bind:cell-info="row[0]" :key="boardData.indexOf(row) + '1'" />
+      <Cell v-bind:cell-info="row[1]" :key="boardData.indexOf(row) + '2'" />
+      <Cell v-bind:cell-info="row[2]" :key="boardData.indexOf(row) + '3'" />
     </v-row>
   </v-container>
 </template>
@@ -18,7 +20,7 @@ import Cell from "@/components/Cell.vue";
 export default Vue.extend({
   name: "Board",
   store,
+  props: ["boardData"],
   components: { Cell },
-  data: () => ({ boardData: store.state.boardData }),
 });
 </script>
