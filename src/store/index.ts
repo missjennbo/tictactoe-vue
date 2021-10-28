@@ -1,12 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { CellInfo, CellType, Player } from "@/types";
-import {
-  getCellTypeFor,
-  getNextPlayer,
-  isGameFinished,
-  isUnmarked,
-} from "@/store/gameUtils";
+import { getCellTypeFor, getNextPlayer, isGameFinished, isUnmarked, } from "@/store/gameUtils";
 import { RESET_GAME, UPDATE_GAME } from "@/store/mutationTypes";
 
 Vue.use(Vuex);

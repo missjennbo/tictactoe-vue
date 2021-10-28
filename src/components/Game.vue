@@ -7,7 +7,7 @@
       <p>{{ $store.state.currentPlayer }} ist dran!</p>
     </v-row>
     <v-row justify="center">
-      <Board v-bind:board-data="boardData"/>
+      <Board v-bind:boardData="$store.state.boardData"/>
     </v-row>
     <v-row justify="center">
       <v-btn style="margin-top: 20px" v-on:click="resetGame">Reset</v-btn>
@@ -25,7 +25,6 @@ export default Vue.extend({
   name: "Game",
   components: { Board },
   store,
-  data: () => ({ boardData: store.state.boardData }),
   methods: {
     resetGame: function () {
       this.$store.commit(RESET_GAME);

@@ -2,7 +2,7 @@
   <v-container>
     <v-row
       justify="center"
-      v-for="row in this.$props.boardData"
+      v-for="row in boardData"
       :key="boardData.indexOf(row)"
     >
       <Cell v-bind:cell-info="row[0]" :key="boardData.indexOf(row) + '1'" />

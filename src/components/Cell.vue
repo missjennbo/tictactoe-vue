@@ -1,5 +1,5 @@
 <template>
-  <div id="cell-img" v-on:click="checkCell">
+  <div id="cell-img" v-on:click="updateGame">
     <v-img v-if="isHeard()" src="../assets/heart.svg"></v-img>
     <v-img v-if="isCross()" src="../assets/cross.svg"></v-img>
   </div>
@@ -28,7 +28,7 @@ export default Vue.extend({
       let filledWith = this.$props.cellInfo.filledWith;
       return filledWith !== CellType.unchecked;
     },
-    checkCell: function () {
+    updateGame: function () {
       if (this.isChecked()) {
         return;
       }
