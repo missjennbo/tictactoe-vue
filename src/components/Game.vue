@@ -10,7 +10,9 @@
       <Board v-bind:boardData="$store.state.boardData" />
     </v-row>
     <v-row v-if="$store.state.gameFinished" justify="center">
-      <p style="margin-top: 20px">{{ $store.state.currentPlayer }} hat gewonnen!</p>
+      <p style="margin-top: 20px">
+        {{ $store.state.currentPlayer }} hat gewonnen!
+      </p>
     </v-row>
     <v-row justify="center">
       <v-btn style="margin-top: 20px" v-on:click="resetGame">Reset</v-btn>
