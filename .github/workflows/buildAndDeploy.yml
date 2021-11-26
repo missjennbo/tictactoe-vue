@@ -49,7 +49,7 @@ jobs:
         run: echo ::set-env name=BUCKET_NAME::$(pulumi stack output bucketName)
 
       - name: Upload files
-      - uses: shallwefootball/s3-upload-action@master
+        uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
