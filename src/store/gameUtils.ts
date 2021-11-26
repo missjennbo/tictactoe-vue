@@ -4,10 +4,10 @@ import { all, equals } from "ramda";
 export const getCellTypeFor = (currentPlayer: Player): CellType =>
   currentPlayer === Player.cross ? CellType.cross : CellType.heart;
 
-export const getNextPlayer = (currentPlayer: Player) =>
+export const getNextPlayer = (currentPlayer: Player): Player =>
   currentPlayer === Player.heart ? Player.cross : Player.heart;
 
-export const isUnmarked = (cell: CellInfo) =>
+export const isUnmarked = (cell: CellInfo): boolean =>
   cell.filledWith === CellType.unchecked;
 
 export const hasThreeInRow = (
