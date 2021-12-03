@@ -55,3 +55,4 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ env.BUCKET_NAME }}
           source_dir: './tictactoe-frontend/dist'
+          destination_dir: ''
