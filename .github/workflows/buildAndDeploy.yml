@@ -40,6 +40,8 @@ jobs:
         run: |
           cd deployment
           pulumi up -s dev -y
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 #        uses: pulumi/actions@v3
 #        with:
 #          command: up
