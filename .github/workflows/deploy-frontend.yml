@@ -48,6 +48,9 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
+      - name: Empty S3 bucket
+        run: aws s3 rm s3://${{ env.BUCKET_NAME }} --recursive
+
       - name: Upload files
         uses: shallwefootball/s3-upload-action@master
         with:
