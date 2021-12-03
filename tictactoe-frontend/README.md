@@ -1,4 +1,4 @@
-# tictactoe-vue
+# tictactoe-frontend
 
 ## Project setup
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "tictactoe-vue",
+  "name": "tictactoe-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,18 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@types/ramda": "^0.27.46",
     "core-js": "^3.6.5",
     "ramda": "^0.27.1",
     "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^9.1.2",
     "vuetify": "^2.4.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@testing-library/vue": "^5.8.2",
-    "@types/jest": "^27.0.2",
+    "@types/ramda": "^0.27.58",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -27,15 +23,39 @@
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
-    "jest": "^27.3.1",
+    "prettier": "^2.2.1",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "typescript": "~4.1.5",
-    "vue-cli-plugin-vuetify": "~2.4.3",
+    "vue-cli-plugin-vuetify": "~2.4.4",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.7.0"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/typescript/recommended",
+      "@vue/prettier",
+      "@vue/prettier/@typescript-eslint"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
