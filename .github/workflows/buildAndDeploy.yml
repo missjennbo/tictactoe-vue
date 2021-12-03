@@ -48,9 +48,9 @@ jobs:
 
       - name: Env Variables
       - run: |
-          - echo "${{ env.BUCKETNAME }}"
-          - echo "${{ secrets.AWS_ACCESS_KEY_ID }}"
-          - echo "${{ secrets.AWS_SECRET_ACCESS_KEY}}"
+          echo "${{ env.BUCKETNAME }}"
+          echo "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          echo "${{ secrets.AWS_SECRET_ACCESS_KEY}}"
 
       - name: Upload files
         uses: shallwefootball/s3-upload-action@master
