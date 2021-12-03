@@ -3,7 +3,10 @@ import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 
 // Create an AWS resource (S3 Bucket)
-const bucket = new aws.s3.Bucket("my-bucket", {website: {indexDocument: "index.html"}});
+const bucket = new aws.s3.Bucket("my-bucket", {
+    acl: "public-read",
+    website: {indexDocument: "index.html"}
+});
 
 export const bucketName = bucket.id;
 export const bucketEndpoint = pulumi.interpolate`http://${bucket.websiteEndpoint}`;
