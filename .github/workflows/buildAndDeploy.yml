@@ -46,16 +46,10 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
-      - name: Env Variables
-        run: |
-          echo "${{ env.BUCKETNAME }}"
-          echo "${{ secrets.AWS_ACCESS_KEY_ID }}"
-          echo "${{ secrets.AWS_SECRET_ACCESS_KEY}}"
-
       - name: Upload files
         uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ env.BUCKETNAME }}
+          aws_bucket: ${{ env.BUCKET_NAME }}
           source_dir: 'dist'
