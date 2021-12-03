@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  install-and-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,6 +26,10 @@ jobs:
       - name: Build
         run: npm run build
 
+  deploy:
+    needs: install-and-build
+    runs-on: ubuntu-latest
+    steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
